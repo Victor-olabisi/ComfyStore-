@@ -3,8 +3,10 @@ import { Outlet } from "react-router-dom";
 const HomeLayout = () => {
   return (
     <>
-          <div>HomeLayout</div>
-          <Outlet/>
+      <section className="align-element">
+        {" "}
+        <Outlet />
+      </section>
     </>
   );
 };
