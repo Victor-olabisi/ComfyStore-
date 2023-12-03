@@ -9,23 +9,57 @@ import {
   HomeLayout,
   Login,
   Checkout,
+  Cart
 } from "./pages";
-import { Route, Routes } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: 'products',
+        element: <Products />,
+      },
+      {
+        path: 'products/:id',
+        element: <SingleProduct />,
+      },
+      {
+        path: 'cart',
+        element: <Cart />,
+      },
+      { path: 'about', element: <About /> },
+      {
+        path: 'checkout',
+        element: <Checkout />,
+      },
+      {
+        path: 'orders',
+        element: <Order />,
+      },
+    ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
+    errorElement: <Error />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
+    errorElement: <Error />,
+  },
+]);
+
 const App = () => {
-  return (
-    <Routes>
-      <Route element={<HomeLayout />}>
-        <Route path="/" element={<Landing />}></Route>
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />}/>
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="/product:id" element={<SingleProduct />} />
-      </Route>
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="*" element={<Error />} />
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 };
 export default App;
+
