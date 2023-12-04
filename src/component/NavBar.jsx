@@ -18,7 +18,12 @@ const NavBar = () => {
             <label className="btn btn-ghost lg:hidden " tabIndex={0}>
               <FaBarsStaggered className="h-6 w-6" />
             </label>
-            <ul className="drowndown-content" tabIndex={0}></ul>
+            <ul
+              className="dropdown-content menu menu-sm bg-base-200 rounded-box w-52 mt-3 p-2 shadow"
+              tabIndex={0}
+            >
+              <NavLinks />
+            </ul>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
