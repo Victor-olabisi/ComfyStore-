@@ -8,7 +8,7 @@ const Header = () => {
           <Link to={"/login"} className="link link-hover text-xs capitalize sm:text-sm ">
             sign in / guest
           </Link>
-          <Link to={"/register"} className="link link-hover text-xs capitalize sm:text-sm ">
+          <Link to="/register" className="link link-hover text-xs capitalize sm:text-sm ">
             create account
           </Link>
         </div>
