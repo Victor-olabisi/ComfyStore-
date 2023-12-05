@@ -26,11 +26,11 @@ const SingleProduct = () => {
           </li>
         </ul>
       </div>
-      <div className="mt-6 grid  gap-y-6 md:grid-cols-2">
+      <div className="mt-6 grid  gap-y-6 md:grid-cols-2 md:gap-x-16">
         <img
           src={image}
           alt={title}
-          className="h-96 w-96 object-cover rounded-lg"
+          className="h-96 w-96 object-cover rounded-lg  md:w-full"
         />
         <div>
           <h2 className="text-3xl font-bold tracking-wide capitalize">

@@ -1,11 +1,11 @@
 import { useNavigation } from "react-router-dom";
 
-const Btn = ({ text }) => {
+const Btn = ({ text, displayType }) => {
   const isSubmitting = useNavigation().state === "submitting";
 
   return (
     <button
-      className="btn bg-primary btn-block text-white font-normal text-md uppercase "
+      className={`btn bg-primary ${displayType  || 'btn-block'} text-white font-normal text-md uppercase `}
       disabled={isSubmitting}
     >
       {isSubmitting ? (
