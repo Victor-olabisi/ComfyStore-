@@ -12,7 +12,6 @@ export const loader = async () => {
   const url = "/products?featured=true";
 
   const response = await customFetch.get(url);
-  // console.log(response);
   const products = response.data.data;
   return { products };
 };
@@ -22,7 +21,7 @@ const Landing = () => {
     <section>
       <div className="grid lg:grid-cols-2 gap-x-20">
         <div>
-          <h1 className="text-4xl lg:text-6xl font-bold tracking-tight max-w-2xl">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight max-w-2xl">
             We are changing the way people shop
           </h1>
           <p className="leading-8 mt-10 text-lg max-w-xl"> 
