@@ -5,4 +5,7 @@ export { default as NavLinks } from './NavLinks'
 export { default as ErrorElement } from './ErrorElement'
 export {default as SectionTitle} from './SectionTitle'
 export {default as ProductsGrid} from './ProductsGrid'
-
+export {default as productList} from './ProductList'
+export {default as Filter} from './Filter'
+export {default as ProductContainer} from './ProductContainer'
+export {default as PaginationContainer} from './PaginationContainer'
