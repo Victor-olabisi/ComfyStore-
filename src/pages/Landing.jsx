@@ -31,7 +31,7 @@ const Landing = () => {
           </p>
           <Link to={"/products"} className=" mt-8 inline-block ">
           
-            <Btn text={"our product"} displayType={'btn-block'}/>
+            <Btn text={"our products"} displayType={'btn-block'}/>
           </Link>
         </div>
         <div className="hidden lg:carousel bg-neutral h-[28rem] p-4 gap-x-4 rounded-box carousel-center">
