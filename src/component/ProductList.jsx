@@ -1,5 +1,5 @@
 import { formatPrice } from "../utils";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ProductList = () => {
   const { products } = useLoaderData();
@@ -8,7 +8,7 @@ const ProductList = () => {
       {products.map((product) => {
         const { image, title, company, price } = product.attributes;
         return (
-          <div className="flex flex-col  sm:flex-row card  shadow-xl group  hover:shadow-2xl bg-base-100 transition duration-300 p-8 mb-4 gap-y-4">
+          <Link to={`/products/${product.id}`} key={product.id} className="flex flex-col  sm:flex-row card  shadow-xl group  hover:shadow-2xl bg-base-100 transition duration-300 p-8 mb-4 gap-y-4">
             <img
               src={image}
               alt=""
@@ -21,7 +21,7 @@ const ProductList = () => {
               <h4 className="capitalize text-neutral-content">{company}</h4>
             </div>
             <p className="sm:ml-auto">{formatPrice(price)}</p>
-          </div>
+          </Link>
         );
       })}
     </div>
