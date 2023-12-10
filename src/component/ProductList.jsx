@@ -8,7 +8,11 @@ const ProductList = () => {
       {products.map((product) => {
         const { image, title, company, price } = product.attributes;
         return (
-          <Link to={`/products/${product.id}`} key={product.id} className="flex flex-col  sm:flex-row card  shadow-xl group  hover:shadow-2xl bg-base-100 transition duration-300 p-8 mb-4 gap-y-4">
+          <Link
+            to={`/products/${product.id}`}
+            key={product.id}
+            className="flex flex-col  sm:flex-row card  shadow-xl group  hover:shadow-2xl bg-base-100 transition duration-300 p-8 mb-4 gap-y-4"
+          >
             <img
               src={image}
               alt=""
