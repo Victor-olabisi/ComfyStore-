@@ -14,7 +14,7 @@ const navigate = useNavigation()
       <NavBar />
       {isLoading ? (
         <section className="h-screen grid place-items-center -translate-y-20">
-          <div className="loading loading-ring"></div>
+          <div className="loading loading-ring loading-lg"></div>
         </section>
       ) : (
         <section className="align-element py-20">

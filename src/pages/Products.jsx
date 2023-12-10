@@ -3,18 +3,20 @@ import { useLoaderData } from "react-router-dom";
 import { Filter, ProductContainer, PaginationContainer } from "../component";
 const url = "/products";
 
-export const loader = async () => {
-  const { data } = await customFetch.get(url);
+export const loader = async ({ request }) => {
+  // console.log(request);
+  const params = Object.fromEntries([... new URL(request.url).searchParams.entries()])
+  // console.log(params);
+  const { data } = await customFetch.get(url,{params});
   const products = data.data;
   const meta = data.meta;
 
-  return { products, meta };
+  return { products, meta,params };
 };
 
 const Products = () => {
   const { products, meta } = useLoaderData();
-  console.log(products);
-  console.log(meta);
+  const { params } = useLoaderData()
   return (
     <>
       <Filter />

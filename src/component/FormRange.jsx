@@ -11,7 +11,7 @@ const FormRange = ({ labelText, name, size }) => {
     <div className="form-control">
       <label htmlFor={name} className="label">
         <span className="label-tex capitalize font-mdt">{labelText}</span>
-        <span className="label-text">{formatPrice(maxPrice)}</span>
+        <span className="label-text">{formatPrice(price)}</span>
       </label>
       <input
         onChange={(e) => setPrice(e.target.value)}
