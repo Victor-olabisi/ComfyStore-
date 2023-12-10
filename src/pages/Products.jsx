@@ -16,7 +16,7 @@ export const loader = async ({ request }) => {
 
 const Products = () => {
   const { products, meta } = useLoaderData();
-  const { params } = useLoaderData()
+  // const { params } = useLoaderData()
   return (
     <>
       <Filter />
