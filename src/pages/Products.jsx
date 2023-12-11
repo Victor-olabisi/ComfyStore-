@@ -19,7 +19,7 @@ const Products = () => {
   // const { params } = useLoaderData()
   return (
     <>
-      <Filter />
+      <Filter />    
       <ProductContainer />
       <PaginationContainer />
     </>
