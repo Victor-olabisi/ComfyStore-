@@ -14,9 +14,8 @@ const PaginationContainer = () => {
   const pageNumber = Array.from({ length: pageCount }, (_, index) => {
     return index + 1
   })
-  const handleChange = (pageNumber) => [
-    
-  ]
+  const handleChange = (pageNumber) => { }
+  if (pageCount < 2) return null
   return (
     <div className="flex justify-end mt-12">
       <div className="join">
