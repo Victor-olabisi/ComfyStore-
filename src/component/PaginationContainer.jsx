@@ -5,8 +5,8 @@ const PaginationContainer = () => {
   const { page, pageCount } = meta.pagination;
   const { search, pathname } = useLocation();
   const navigate = useNavigate();
-  console.log(search);
-  console.log(pathname);
+  // console.log(search);
+  // console.log(pathname);
   // console.log(meta);
 
   const pageNumber = Array.from({ length: pageCount }, (_, index) => {

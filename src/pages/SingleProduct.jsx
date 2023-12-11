@@ -3,11 +3,11 @@ import { formatPrice } from "../utils";
 import customFetch from "../utils";
 import { useState } from "react";
 import { generateAmountOption } from "../utils";
-
-
+import { addItem } from "../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
 
 export const loader = async ({ params }) => {
-  console.log(params);
+  // console.log(params);
   const response = await customFetch.get(`/products/${params.id}`);
   const product = response.data.data;
   return { product };
@@ -15,15 +15,29 @@ export const loader = async ({ params }) => {
 
 const SingleProduct = () => {
   const { product } = useLoaderData();
-  const [amount, setAmount] = useState(0)
-  // console.log(product);
+  const [amount, setAmount] = useState(1);
+  const dispatch = useDispatch();
+  // console.log(typeof(amount));
   const { title, colors, image, company, price, description } =
     product.attributes;
   const [productColor, setProductColor] = useState(colors[0]);
-  const dollarPrice = formatPrice(parseInt(price))
+  const dollarPrice = formatPrice(parseInt(price));
   const handleChange = (e) => {
-    setAmount(e.target.value)
-  }
+    setAmount(parseInt(e.target.value));
+  };
+  const cartProduct = {
+    cartID: product.id + productColor,
+    productID: product.id,
+    productColor,
+    amount,
+    company,
+    title,
+    image,
+    price,
+  };
+  const addToCart = () => {
+   dispatch(addItem({product:cartProduct}))
+ }
   return (
     <section>
       <div className="text-md breadcrumbs">
@@ -85,15 +99,14 @@ const SingleProduct = () => {
               className="select select-secondary select-bordered"
               onChange={handleChange}
             >
-             {generateAmountOption(20)}
+              {generateAmountOption(20)}
             </select>
           </div>
-          <Link to={"/cart"}>
+          
             {" "}
-            <button className="btn btn-secondary uppercase mt-6">
+            <button className="btn btn-secondary uppercase mt-6" onClick={addToCart}>
               add to bag
             </button>
-          </Link>
         </div>
       </div>
     </section>
