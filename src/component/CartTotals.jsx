@@ -11,11 +11,11 @@ const CartTotals = () => {
           <span>sub totals</span>
           <span>{formatPrice(cartTotal)}</span>
         </p>
-        <p className="flex justify-between border-b border-base-300 text-xs">
+        <p className="flex justify-between border-b border-base-300 text-xs pb-2">
           <span>shipping</span>
           <span>{formatPrice(shipping)}</span>
         </p>
-        <p className="flex justify-between border-b border-base-300 text-xs">
+        <p className="flex justify-between border-b border-base-300 text-xs pb-2">
           <span>tax</span>
           <span>{formatPrice(tax)}</span>
         </p>
