@@ -12,11 +12,11 @@ const Cart = () => {
   return (
     <>
       <SectionTitle text={"shopping cart"} />
-      <div className="mt-12 grid gap-y-16 ">
-        <div>
+      <div className="mt-12 grid gap-y-16  md:!grid-cols-12 gap-x-10">
+        <div className="md:col-span-8">
           <CartList />
         </div>
-        <div>
+        <div className="md:col-span-4">
           <CartTotals />
           {user ? (
             <link>

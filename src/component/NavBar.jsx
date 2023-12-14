@@ -32,7 +32,7 @@ const { numItemsInCart} = useSelector((store)=>store.cartState)
         <div className="navbar-start">
           <NavLink
             to={"/"}
-            className="btn bg-primary hidden text-white  text-3xl lg:flex items-center"
+            className="btn bg-primary hidden text-white  text-3xl lg:!flex items-center"
           >
             c
           </NavLink>
@@ -48,7 +48,7 @@ const { numItemsInCart} = useSelector((store)=>store.cartState)
             </ul>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:!flex">
           <div className="menu menu-horizontal">
             <NavLinks />
           </div>
