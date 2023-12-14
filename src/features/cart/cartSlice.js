@@ -28,14 +28,25 @@ const cartSlice = createSlice({
       }
       state.numItemsInCart += product.amount;
       state.cartTotal += product.amount * product.price
-      state.tax = 0.1 * state.cartTotal
-      state.orderTotal += state.cartTotal + state.shipping + state.tax
-      localStorage.setItem("cart", JSON.stringify(state));
-
+     
+    cartSlice.caseReducers.calculateTotals(state)
       toast.success("item added to cart");
     
     },
+    removeItem:(state,action)=>{
+       const cartID = action.payload
+       console.log(cartID);
+      const product = state.cartItems.find((item)=>item.cartID === cartID)
+      state.cartItems= state.cartItems.filter((item)=> item.cartID !== cartID)
+      state.numItemsInCart -= product.amount 
+      cartSlice.caseReducers.calculateTotals(state)
+    },
+   calculateTotals:(state)=>{
+     state.tax = 0.1 * state.cartTotal
+      state.orderTotal += state.cartTotal + state.shipping + state.tax
+      localStorage.setItem("cart", JSON.stringify(state));
+   } 
   },
 });
-export const { addItem } = cartSlice.actions;
+export const { addItem, removeItem } = cartSlice.actions;
 export default cartSlice.reducer;

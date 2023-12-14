@@ -5,7 +5,7 @@ import { formatPrice } from "../utils"
 const CartTotals = () => {
   const { cartTotal, orderTotal, shipping, tax } = useSelector((state) => state.cartState)
   return (
-    <div className="card bg-[#181920]">
+    <div className="card bg-base-300">
       <div className="card-body">
         <p className="flex justify-between border-b pb-2 border-base-300 text-xs">
           <span>sub totals</span>
