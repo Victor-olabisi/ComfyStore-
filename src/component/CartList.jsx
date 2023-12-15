@@ -37,7 +37,7 @@ const dispatch = useDispatch()
               </label>
               <select
                 name='amount'
-                value={amount}
+                defaultValue={amount}
                 id=""
                 className="select select-sm max-w-xs md:w-16 border-base-300 border-4"
               >

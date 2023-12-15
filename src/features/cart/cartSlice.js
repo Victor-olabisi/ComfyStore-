@@ -39,6 +39,8 @@ const cartSlice = createSlice({
       const product = state.cartItems.find((item)=>item.cartID === cartID)
       state.cartItems= state.cartItems.filter((item)=> item.cartID !== cartID)
       state.numItemsInCart -= product.amount 
+      state.cartTotal -= product.price * product.amount;
+
       cartSlice.caseReducers.calculateTotals(state)
       toast.error('item remove from cart')
     },
