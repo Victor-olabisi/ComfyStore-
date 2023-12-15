@@ -1,12 +1,11 @@
 import { formatPrice } from "../utils";
-import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 const FormRange = ({ labelText, name, size }) => {
-  const { products } = useLoaderData();
   const maxPrice = 100000;
   const step = 1000;
   const [price, setPrice] = useState(maxPrice);
-  console.log(price);
+
+
   return (
     <div className="form-control">
       <label htmlFor={name} className="label">

@@ -6,7 +6,7 @@ const url = "/products";
 export const loader = async ({ request }) => {
   // console.log(request);
   const params = Object.fromEntries([... new URL(request.url).searchParams.entries()])
-  // console.log(params);
+  console.log(params);
   const { data } = await customFetch.get(url,{params});
   const products = data.data;
   const meta = data.meta;
@@ -15,8 +15,7 @@ export const loader = async ({ request }) => {
 };
 
 const Products = () => {
-  const { products, meta } = useLoaderData();
-  // const { params } = useLoaderData()
+  
   return (
     <>
       <Filter />    

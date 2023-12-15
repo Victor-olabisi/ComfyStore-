@@ -10,7 +10,6 @@ const ProductContainer = () => {
     const { meta } = useLoaderData()
     const total = meta.pagination.total;
     const [display, setDisplay] = useState('grid')
-    console.log(display);
 
    const setActiveStyles = (pattern) => {
      return ` btn btn-circle btn-sm ${
@@ -19,7 +18,6 @@ const ProductContainer = () => {
          : "btn-ghost text-base-content"
      }`;
    };
-    // console.log(meta);
   return (
     <>
       <header className="flex border-b-2 justify-between border-base-300 pb-5 items-center">
