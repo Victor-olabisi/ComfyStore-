@@ -36,7 +36,7 @@ const Landing = () => {
         </div>
         <div className="hidden lg:carousel bg-neutral h-[28rem] p-4 gap-x-4 rounded-box carousel-center">
           {carouselImages.map((image) => {
-            return <div className="carousel-item ">
+            return <div className="carousel-item " key={image}>
               <img src={image} alt="" className=" object-cover rounded-box w-80" />
             </div>
           })}

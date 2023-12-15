@@ -40,10 +40,11 @@ const cartSlice = createSlice({
       state.cartItems= state.cartItems.filter((item)=> item.cartID !== cartID)
       state.numItemsInCart -= product.amount 
       cartSlice.caseReducers.calculateTotals(state)
+      toast.error('item remove from cart')
     },
    calculateTotals:(state)=>{
      state.tax = 0.1 * state.cartTotal
-      state.orderTotal += state.cartTotal + state.shipping + state.tax
+      state.orderTotal = state.cartTotal + state.shipping + state.tax
       localStorage.setItem("cart", JSON.stringify(state));
    } 
   },
