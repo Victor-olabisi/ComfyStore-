@@ -33,6 +33,9 @@ const cartSlice = createSlice({
       toast.success("item added to cart");
     
     },
+    clearcart:(state)=> {
+      return defaultState
+    },
     removeItem:(state,action)=>{
        const cartID = action.payload
        console.log(cartID);
@@ -51,5 +54,5 @@ const cartSlice = createSlice({
    } 
   },
 });
-export const { addItem, removeItem } = cartSlice.actions;
+export const { addItem, removeItem,clearcart } = cartSlice.actions;
 export default cartSlice.reducer;

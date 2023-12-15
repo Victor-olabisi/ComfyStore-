@@ -5,12 +5,18 @@ import { Link } from "react-router-dom";
 import { useNavigation } from "react-router-dom";
 import customFetch from "../utils";
 import { toast } from "react-toastify";
-export const action = async ({request}) => {
+import { loginUser } from "../features/user/userSlice";
+
+
+export const action =(store)=> async ({request}) => {
   const formData = await request.formData()
+  console.log(store);
   const data = Object.fromEntries(formData)
   try {
     const resp = await customFetch.post('/auth/local', data)
     toast.success('logged in successfully')
+    console.log(resp);
+    store.dispatch(loginUser(resp.data))
     return redirect('/')
   } catch (error) {
     console.log(error);
