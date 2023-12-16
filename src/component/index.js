@@ -12,3 +12,4 @@ export {default as PaginationContainer} from './PaginationContainer'
 export {default as FormSelect} from './FormSelect'
 export { default as CartTotals } from './CartTotals'
 export {default as CartList} from './CartList'
+export { default as CheckoutForm } from "./CheckoutForm";
