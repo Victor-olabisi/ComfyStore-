@@ -23,9 +23,11 @@ const Checkout = () => {
 
   return (
     <>
-      <CheckoutForm />
-      <CartTotals/>
+      <div className="grid md:grid-cols-2 gap-x-8 items-start">
+        <CheckoutForm />
+        <CartTotals />
+      </div>
     </>
-  )
+  );
 }
 export default Checkout
